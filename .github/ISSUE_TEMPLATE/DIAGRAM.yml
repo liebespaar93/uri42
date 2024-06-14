@@ -1,0 +1,120 @@
+name: "⛓️ 다이어그램 보고서"
+description: "다이어그램에 설정에 대한 보고서입니다"
+title: "⛓️ "
+labels: ["📝 문서", "⛓️ 다이어그램"]
+projects: []
+assignees:
+  - kyoulee
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 다이어그램 작성
+
+        github mermaid 를 준수하며 그에 맞게 출력된다
+
+        가이드라인 [🚀 링크](https://mermaid.js.org/intro/) 를 확인해 주세요
+
+        ## 다이어그램 작성 방법
+          - 다음줄에 기입이 가능하며
+          - 깃 허브 마크다운으로 작동합니다
+  - type: input
+    id: input_name
+    attributes:
+      label: 📣 다이어그램 이름
+      description: 💭 다이어그램의 이름을 작성해 주세요
+      placeholder: 🫧 <이름>
+    validations:
+      required: true
+  - type: dropdown
+    id: dropdown_type
+    attributes:
+      label: 📣 다이어그램 차트 타입을 선택해 주세요
+      description: 💭 타입을 참고하여 선택해주세요
+      multiple: false
+      options:
+        - flowchart LR
+        - sequenceDiagram
+        - classDiagram
+        - stateDiagram-v2
+        - erDiagram
+        - journey
+        - gantt
+        - pie showData
+        - quadrantChart
+        - requirementDiagram
+        - gitGraph
+        - C4Context
+        - mindmap
+        - timeline
+        - zenuml
+        - sankey-beta
+        - graph TB
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: textarea_description
+    attributes:
+      label: 📣 다이어그램 생성 이유
+      description: 💭 다이어그램 생성 이유을 적어주세요
+      placeholder: |
+        🫧 <다이어그램 생성 이유>
+        1. <이유>
+        2. <이유>
+      render: ''
+    validations:
+      required: false
+  - type: textarea
+    id: textarea_work
+    attributes:
+      label: 📣 다이어그램 작성
+      description: 💭 다이어그램에 필요한 목록 작성
+      placeholder: |
+        🫧 <ex. 예시 코드>
+        < 차트 타입 ? 상위에 선택한 타입을 작성해 주세요 >
+          <A> --> |거절|<B>
+          <B> --> <C>
+          <A> --> |수락|<C>
+        end
+      value: |
+        flowchart LR
+          사용자 --> 관리자_신청
+          관리자_신청 -->|거절|사용자
+          관리자_신청 -->|수락|관리자
+          subgraph Admin
+            관리자-->리뷰조회
+            관리자-->이슈생성
+            관리자-->이슈선택
+            이슈생성-->이슈상세작성
+            이슈상세작성-->w{작업}
+            이슈선택-->w{작업}
+            w{작업}-->작업_완료
+            작업_완료--"`코드 스타일 & 규칙 확인 `"-->자가정검
+            자가정검-->|"`PR 전송`"|리뷰신청
+            subgraph Reviewer
+              리뷰조회-->리뷰신청
+              리뷰신청--승인-->f{{완료}}:::green
+            end
+              리뷰신청--거절-->이슈상세작성
+          end
+          classDef red stroke:#f00 
+          classDef green fill:#060
+          classDef blue stroke:#00f
+      render: 'mermaid'
+    validations:
+      required: true
+  - type: checkboxes
+    id: checkboxes_list
+    attributes:
+      label: 📣 작성자 체크리스트
+      description: 💭 작성자 체크리스트
+      options:
+        - label: 🔱 다이어그램 제목을 적절하게 정하였습니까?
+          required: false
+        - label: 📍 '다이어그램 작성'에 선택한 차트타입을 기입하였습니까?
+          required: true
+        - label: 📍 타이틀에 다이어그램 이름을 추가하였습니까?
+          required: true
+        - label: 📌 작성자는 모든 작업에 대한 정보가 공개됨을 동의함니까?
+          required: true
