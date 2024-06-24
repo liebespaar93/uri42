@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\admin\\documents\\github\\uri42\\uri42\\intermediate\\build\\win64\\unrealeditor\\inc\\uri42\\uht\\tp_weaponcomponent.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\admin\\documents\\github\\uri42\\uri42\\intermediate\\build\\win64\\x64\\uri42editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\admin\\documents\\github\\uri42\\uri42\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\uri42\\definitions.uri42.h",
+            "c:\\users\\admin\\documents\\github\\uri42\\uri42\\source\\uri42\\tp_weaponcomponent.h",
+            "c:\\users\\admin\\documents\\github\\uri42\\uri42\\intermediate\\build\\win64\\unrealeditor\\inc\\uri42\\uht\\tp_weaponcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

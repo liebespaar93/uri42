@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "uri42",
+			"Path": "..\\Source\\uri42.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "uri42Editor",
+			"Path": "..\\Source\\uri42Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
