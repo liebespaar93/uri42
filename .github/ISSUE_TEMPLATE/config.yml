@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📨 uri42 깃허브
+    url: https://github.com/kyoulee/uri42
+    about: Please ask and answer questions here.
+  - name: 🌎 대회 정보
+    url: https://www.metaversedev.kr/
+    about: 대회 링크
